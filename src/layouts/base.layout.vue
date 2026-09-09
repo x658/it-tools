@@ -120,7 +120,7 @@ const tools = computed<ToolCategory[]>(() => [
           <NavbarButtons v-if="!styleStore.isSmallScreen" />
         </div>
 
-        <c-tooltip position="bottom" :tooltip="前往 XPT Dev 主站">
+        <c-tooltip position="bottom" tooltip="前往 XPT Dev 主站">
           <c-button
             round
             href="https://xptdev.com"
@@ -128,18 +128,12 @@ const tools = computed<ToolCategory[]>(() => [
             target="_blank"
             class="support-button"
             :bordered="false"
-            @click="() => tracker.trackEvent({ eventName: 'Support button clicked' })"
           >
-            {{ $t('🔥 访问主站') }}
+            🔥 访问主站
             <NIcon v-if="!styleStore.isSmallScreen" :component="Heart" ml-2 />
           </c-button>
         </c-tooltip>
-      </div>
-      <slot />
-    </template>
-  </MenuLayout>
-</template>
-
+        
 <style lang="less" scoped>
 // ::v-deep(.n-layout-scroll-container) {
 //     @percent: 4%;
